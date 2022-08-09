@@ -31,6 +31,7 @@
 			padding: 50px;
 			border-radius: 20px;
 			justify-content: space-around;
+			position: relative;
 			/* align-items: center; */
 			box-shadow: 0px 20px 45px black;
 			/* margin-bottom:400px; */
@@ -45,7 +46,10 @@
 			/* border: 1px solid red ; */
 			/* margin-left: 30px; */
 			width: 400px;
-			height: 350px;
+			height: 390px;
+			margin-bottom:20px;
+			position: relative;
+			bottom: 45px;
 		}
 		#form1{
 			position: relative;

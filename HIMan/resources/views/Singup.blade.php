@@ -43,7 +43,7 @@
 			width: 10%;
 			/* border: 1px solid red ; */
 			/* margin-left: 30px; */
-			width: 400px;
+			width: 420px;
 		}
 		#form1{
 			position: relative;
