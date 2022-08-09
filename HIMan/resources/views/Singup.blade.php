@@ -139,7 +139,7 @@
 				<span id="link1"> Do You Have A Account ? <a href=" {{ route('singin') }} ">Sing In </a></span>
 			</form>
 
-			<img src="../img/514482.png"  id="img2">
+			<img src="../img/171.jpg"  id="img2">
 		</div>
 
 	@endsection

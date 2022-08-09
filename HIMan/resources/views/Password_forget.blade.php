@@ -44,7 +44,8 @@
 			
 			/* border: 1px solid red ; */
 			/* margin-left: 30px; */
-			width: 300px;
+			width: 400px;
+			height: 350px;
 		}
 		#form1{
 			position: relative;
@@ -117,14 +118,14 @@
 			<form action="" method="post" id="form1">
 				<h1 id="h1">Forgot Password?</h1>
                 <p id="par">Enter your registered E-mail to reset the password</p><br>
-				<img src="../img/514482.png " id="img1">
+				<i class="bi bi-envelope-fill"></i>
                 <input type="email" name="log" id="log" placeholder="Enter Your E-mail"><br>
                     <br><br>
 				<input type="submit" value="Send" id="btn1"><br>
 				<span id="link1"> Go back  ? <a href=" {{ route('singin') }} ">Sing In </a></span>
 			</form>
 
-			<img src="../img/514482.png"  id="img2">
+			<img src="/img/9.jpg"  id="img2"/>
 		</div>
 		
 

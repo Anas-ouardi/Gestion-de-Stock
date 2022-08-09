@@ -48,6 +48,7 @@
 			/* border: 1px solid red ; */
 			/* margin-left: 30px; */
 			width: 400px;
+			height: 350px;
 		}
 		#form1{
 			position: relative;
@@ -114,13 +115,13 @@
 			<form action="" method="post" id="form1">
 				<h1 id="h1">Sign In</h1>
 				<i class="bi bi-envelope-fill"></i><input type="text" name="log" id="log" placeholder="E-mail"><br>
-				<i class="bi bi-door-closed-fill"></i><input type="text" name="pass" id="pss" placeholder="Password"><br>
+				<i class="bi bi-shield-lock"></i></i><input type="text" name="pass" id="pss" placeholder="Password"><br>
 				<a href=" {{route('password_forget')}} " id="link"> Forget your password ? </a><br>
 				<input type="submit" value="Sign in" id="btn1"><br>
 				<span id="link1"> Don't Have An Account Yet ? <a href=" {{ route('singup') }} ">Sing Up </a></span>
 			</form>
 
-			<img src="../img/514482.png"  id="img2">
+			<img src="../img/10.jpg"  id="img2">
 		</div>
 		
 
