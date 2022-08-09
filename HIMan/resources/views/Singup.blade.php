@@ -125,12 +125,12 @@
 			<form action=" {{ route('stor') }} " method="GET" id="form1" >
 				<h1 id="h1">Sign Up</h1>
                 {{-- <span id="Avatar">Choise Your Avatar</span><input type="file" name="Avatar" id="Avatar" accept=".jpg, .png, image/jpeg, image/png" multiple ><br> --}}
-				<img src="../img/514482.png " id="img1"> <input type="text" name="Entroprise_Name" class="input" placeholder="Entroprise-Name">
-				<img src="../img/514482.png " id="img1"> <input type="text" name="User_Name"  class="input" placeholder="User-Name"><br>
-				<img src="../img/514482.png " id="img1"> <input type="email" name="Email" class="input"  placeholder="Email">
-				<img src="../img/514482.png " id="img1"> <input type="text" name="Phone_Number"  class="input" placeholder="Phone Nomber"><br>
-				<img src="../img/514482.png " id="img1"> <input type="password" name="password" class="input"  placeholder="Set Password">
-				<img src="../img/514482.png " id="img1"> <input type="password" name="re_password" class="input"  placeholder="Re-Enter Password"><br><br><br>
+				<i class="bi bi-building"></i> <input type="text" name="Entroprise_Name" class="input" placeholder="Entroprise-Name">
+				<i class="bi bi-person"></i><input type="text" name="User_Name"  class="input" placeholder="User-Name"><br>
+				<i class="bi bi-envelope"></i><input type="email" name="Email" class="input"  placeholder="Email">
+				<i class="bi bi-telephone"></i> <input type="text" name="Phone_Number"  class="input" placeholder="Phone Nomber"><br>
+				<i class="bi bi-shield-lock"></i><input type="password" name="password" class="input"  placeholder="Set Password">
+				<i class="bi bi-shield-check"></i><input type="password" name="re_password" class="input"  placeholder="Re-Enter Password"><br><br><br>
 				
 
 
