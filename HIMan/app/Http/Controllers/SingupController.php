@@ -8,25 +8,26 @@ use App\Models\singup;
 use function Ramsey\Uuid\v1;
 
 session_start();
-$_SESSION['CONECT']=false;
+$_SESSION['CONECT'] = false;
 class SingupController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
         return view("welcome");
-
-
     }
 
 
-    public function main(){
+    public function main()
+    {
 
         $data = singup::all();
 
-        return view('main_log',['datas'=>$data,'title'=>"Main Log"]);
+        return view('main_log', ['datas' => $data, 'title' => "Main Log"]);
     }
 
-    public function stor(Request $request ){
+    public function stor(Request $request)
+    {
 
 
         $res  = $request->validate(
@@ -36,7 +37,8 @@ class SingupController extends Controller
                 'Email' => 'required',
                 'Phone_Number' => 'required',
                 'password' => 'required'
-            ] );
+            ]
+        );
 
 
         $Singup_table = new singup();
@@ -55,33 +57,28 @@ class SingupController extends Controller
         return redirect()->route('main_log');
     }
 
-    public function log_in(Request $request){
+    public function log_in(Request $request)
+    {
 
         $data = singup::all();
 
         $request->input('log');
         $request->input('pass');
-        foreach($data as $x){
-            if($request->input('log')===$x['Email'] and $request->input('pass')===$x['password']){
-                        $_SESSION['CONECT']='dd';
-                        // dd($_SESSION['CONECT']);
-                        return redirect()->route('user_interface',['id'=>$x['id']]);// dir view noxan 
-                    }
-
+        foreach ($data as $x) {
+            if ($request->input('log') === $x['Email'] and $request->input('pass') === $x['password']) {
+                $_SESSION['CONECT'] = 'dd';
+                // dd($_SESSION['CONECT']);
+                return redirect()->route('user_interface', ['id' => $x['id']]); // dir view noxan
+            }
         }
-        
     }
 
-    public function user_interface($id){
+    public function user_interface($id)
+    {
 
-        
-        
 
-        return view("user_interface",['user_id'=>$id,'title'=>'USER']);
+        $data = singup::all();
 
+        return view("user_interface", ['user_id' => $id, 'data' => $data, 'title' => 'USER']);
     }
-
-
-
-    
 }
