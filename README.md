@@ -3,4 +3,4 @@ gestion de stock php laravel
 
 
 hi Bro
-hello my friend
+this app is application to manage your Stock 
