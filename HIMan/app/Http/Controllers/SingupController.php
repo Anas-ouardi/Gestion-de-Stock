@@ -81,4 +81,12 @@ class SingupController extends Controller
 
         return view("user_interface", ['user_id' => $id, 'data' => $data, 'title' => 'USER']);
     }
+
+    public function delete($id)
+    {
+        $signup = singup::find($id);
+        $signup->delete();
+
+        return redirect()->route('index');
+    }
 }

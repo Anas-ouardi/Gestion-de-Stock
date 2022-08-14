@@ -10,25 +10,25 @@
     @endforeach --}}
 
     {{-- AbdElhakym code : --}}
-    <div class="container">
+    <div class="container mt-5">
         <table class="text-center table table-md">
             <thead>
-                <th>name</th>
-                <th>email</th>
+                <th>Entroprise Name</th>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
                 <th>password</th>
-                <th>created at</th>
-                <th>updated at</th>
                 <th>Action</th>
             </thead>
             @foreach ($data as $item)
                 <tbody>
-                    <td> {{ $item['name'] }} </td>
-                    <td> {{ $item['email'] }} </td>
+                    <td> {{ $item['Entroprise_Name'] }} </td>
+                    <td> {{ $item['User_Name'] }} </td>
+                    <td> {{ $item['Email'] }} </td>
+                    <td> {{ $item['Phone_Number'] }} </td>
                     <td> {{ $item['password'] }} </td>
-                    <td> {{ $item['created_at'] }} </td>
-                    <td> {{ $item['updated_at'] }} </td>
                     <td>
-                        <div class="d-flex">
+                        {{-- <div class="d-flex">
                             <div class="me-3">
                                 <form action="{{ route('DeleteSelector', ['id' => $item['id']]) }}" method="post">
                                     @csrf
@@ -39,7 +39,7 @@
                             <div>
                                 <a href=" {{ route('EditSelector', ['id' => $item['id']]) }} " class="btn btn-info">Update</a>
                             </div>
-                        </div>
+                        </div> --}}
                     </td>
                 </tbody>
             @endforeach
