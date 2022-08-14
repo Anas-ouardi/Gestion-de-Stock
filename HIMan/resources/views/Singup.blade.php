@@ -30,7 +30,7 @@
 			padding: 50px;
 			border-radius: 20px;
 			justify-content: space-around;
-			/* align-items: center; */
+			align-items: center;
 			box-shadow: 0px 20px 45px black;
 			/* margin-bottom:400px; */
 		}
@@ -112,6 +112,14 @@
             font-family: 'Courier New', Courier, monospace;
             font-weight: bold;
         }
+		.message{
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			font-size: 15px;
+			font-family: 'Courier New', Courier, monospace;
+			font-weight: bold;
+		}
 
 	</style>
 	@endsection
@@ -123,14 +131,45 @@
 		<div class="container">
 			
 			<form action=" {{ route('stor') }} " method="GET" id="form1" >
+				@csrf
 				<h1 id="h1">Sign Up</h1>
                 {{-- <span id="Avatar">Choise Your Avatar</span><input type="file" name="Avatar" id="Avatar" accept=".jpg, .png, image/jpeg, image/png" multiple ><br> --}}
-				<i class="bi bi-building"></i> <input type="text" name="Entroprise_Name" class="input" placeholder="Entroprise-Name">
-				<i class="bi bi-person"></i><input type="text" name="User_Name"  class="input" placeholder="User-Name"><br>
-				<i class="bi bi-envelope"></i><input type="email" name="Email" class="input"  placeholder="Email">
-				<i class="bi bi-telephone"></i> <input type="text" name="Phone_Number"  class="input" placeholder="Phone Nomber"><br>
-				<i class="bi bi-shield-lock"></i><input type="password" name="password" class="input"  placeholder="Set Password">
-				<i class="bi bi-shield-check"></i><input type="password" name="re_password" class="input"  placeholder="Re-Enter Password"><br><br><br>
+				<i class="bi bi-building"></i>
+				<input type="text" name="Entroprise_Name" class="input" placeholder="Entroprise-Name" >
+
+				{{-- @error('Entroprise_Name')
+				<small  style="color: red" class="message" >
+					{{ $message }}
+				</small><br>
+           		@enderror --}}
+
+				<i class="bi bi-person"></i>
+				<input type="text" name="User_Name"  class="input" placeholder="User-Name" ><br>
+				<i class="bi bi-envelope"></i>
+				<input type="email" name="Email" class="input"  placeholder="Email" >
+
+				{{-- @error('Email')
+				<small  style="color: red" class="message" >
+					{{ $message }}
+				</small><br>
+           		@enderror --}}
+
+				<i class="bi bi-telephone"></i>
+				<input type="text" name="Phone_Number"  class="input" placeholder="Phone Nomber"><br>
+				{{-- @error('Phone_Number')
+				<small  style="color: red" class="message" >
+					{{ $message }}
+				</small><br>
+           		@enderror --}}
+				<i class="bi bi-shield-lock"></i>
+				<input type="password" name="password" class="input"  placeholder="Set Password">
+				{{-- @error('password')
+				<small  style="color: red" class="message" >
+					{{ $message }}
+				</small><br>
+           		@enderror --}}
+				<i class="bi bi-shield-check"></i>
+				<input type="password" name="re_password" class="input"  placeholder="Re-Enter Password"><br><br><br>
 				
 
 

@@ -1,11 +1,5 @@
 @extends('layout.main')
 
-	@section('icon')
-	
-		
-	@endsection
-		
-	
 
 	@section('style')
 	<style>
@@ -34,7 +28,7 @@
 			padding: 50px;
 			border-radius: 20px;
 			justify-content: space-around;
-			/* align-items: center; */
+			align-items: center;
 			box-shadow: 0px 20px 45px black;
 			/* margin-bottom:400px; */
 
@@ -44,15 +38,17 @@
 			/* border: 1px solid red ; */
 		}
 		#img2{
-			width: 10%;
+			/* width: 10%; */
 			/* border: 1px solid red ; */
 			/* margin-left: 30px; */
 			width: 400px;
 			height: 350px;
+			/* margin-left: 10px; */
 		}
 		#form1{
 			position: relative;
 			width: 250px;
+			margin-left: 15px;
 			/* border: 1px solid red ; */
 			/* text-align: center; */
 		}
@@ -70,6 +66,8 @@
 			font-family: 'Courier New', Courier, monospace;
 			font-size: 16px;
 			margin-top:10px;
+			margin-left:6px;
+			margin-bottom: 5px;
 		}
 		
 		
@@ -102,6 +100,7 @@
 			font-family: 'Courier New', Courier, monospace;
 			font-size: 15px;
 		}
+		
 
 	</style>
 	@endsection
@@ -112,7 +111,8 @@
 	<div class="fakebox"></div>
 		<div class="container">
 			
-			<form action="" method="post" id="form1">
+			<form action="{{route("log_in")}}" method="post" id="form1">
+				@csrf
 				<h1 id="h1">Sign In</h1>
 				<i class="bi bi-envelope-fill"></i><input type="text" name="log" id="log" placeholder="E-mail"><br>
 				<i class="bi bi-shield-lock"></i></i><input type="text" name="pass" id="pss" placeholder="Password"><br>

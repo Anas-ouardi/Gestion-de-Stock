@@ -2,17 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\singup;
 use Illuminate\Http\Request;
+use App\Models\singup;
+
+use function Ramsey\Uuid\v1;
 
 class SingupController extends Controller
 {
     public function index(){
 
+        return view("welcome");
+
+
+    }
+
+
+    public function main(){
+
         $data = singup::all();
 
-        
-        view('main_log',['datas' => $data]);
+        return view('main_log',['datas'=>$data,'title'=>"Main Log"]);
     }
 
     public function stor(Request $request ){
@@ -20,37 +29,37 @@ class SingupController extends Controller
 
         $res  = $request->validate(
             [
-                'Entroprise_Name' => 'required|max:100',
-                'User_Name' => 'required|max:50',
+                'Entroprise_Name' => 'required',
+                'User_Name' => 'required',
                 'Email' => 'required',
-                'Phone_Number' => 'required|integer',
+                'Phone_Number' => 'required',
                 'password' => 'required'
             ] );
 
 
-        $test = new singup();
+        $Singup_table = new singup();
 
-        $test->Entroprise_Name = $request->input('Entroprise_Name');
-        $test->User_Name = $request->input('User_Name');
-        $test->Email = $request->input('Email');
-        $test->Phone_Number = $request->input('Phone_Number');
-        $test->password = $request->input('password');
-
-
-        $test->save();
+        $Singup_table->Entroprise_Name = $request->input('Entroprise_Name');
+        $Singup_table->User_Name = $request->input('User_Name');
+        $Singup_table->Email = $request->input('Email');
+        $Singup_table->Phone_Number = $request->input('Phone_Number');
+        $Singup_table->password = $request->input('password');
 
 
+        $Singup_table->save();
 
-        return redirect()->route('index');
+
+
+        return redirect()->route('main_log');
     }
 
-    public function jjhh(){
+    public function log_in(Request $request){
+        
 
-        $data = singup::all();
-
-        dd($data);
 
     }
+
+
 
     
 }

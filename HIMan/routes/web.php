@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\SingupController;
+use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,14 +29,16 @@ Route::get('/Singup',function(){
 })->name("singup");
 
 
-Route::get('/stor',[SingupController::class],'stor')->name('stor');
+Route::get('/stor',[SingupController::class,'stor'])->name('stor');
 
-// Route::get('/jjhh',[SingupController::class],'jjhh')->name('jjhh');
 
-// Route::get('/index',[SingupController::class],'index')->name('index');
+Route::get('/index',[SingupController::class,'index'])->name('index');
 
 
 Route::get('/password_forget',function(){
     return view("Password_forget",["title"=>'Password Forgot']);
 })->name('password_forget');
 
+Route::get("/main_log",[SingupController::class,'main'])->name('main_log');
+
+Route::get("/log_in",[SingupController::class,'main'])->name('log_in');

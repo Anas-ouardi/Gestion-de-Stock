@@ -15,7 +15,7 @@ class singup extends Model
 
     public $incrementing = true;
 
-    public $keyType = "int";
+    protected $keyType = "int";
 
     public $timestamps = true ;
 

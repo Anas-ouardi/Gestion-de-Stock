@@ -1,6 +1,5 @@
 @extends('layout.main')
 
-
 @section('style')
 	<style>
 		body{
@@ -120,6 +119,7 @@
 		<div class="container">
 			
 			<form action="" method="post" id="form1">
+				@csrf
 				<h1 id="h1">Forgot Password?</h1>
                 <p id="par">Enter your registered E-mail to reset the password</p><br>
 				<i class="bi bi-envelope-fill"></i>

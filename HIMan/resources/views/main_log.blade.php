@@ -1,14 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('layout.main')
+@section('Form')
+    <h1>Welcome bro </h1>
+        <table border="1px">
+            <tr>
+                <th>Id</th>
+                <th>Entroprise_Name</th>
+                <th>User_Name</th>
+                <th>Email</th>
+                <th>Phone_Number</th>
+                <th>password</th>
+            </tr>
 
-    <h1>Welcome bro {{$datas[0]['Entroprise_Name']}} </h1>
+            @foreach ($datas as $data)
+            <tr>
+            <th>{{$data['id']}}</th>
+            <th>{{$data['Entroprise_Name']}}</th>
+            <th>{{$data['User_Name']}}</th>
+            <th>{{$data['Email']}}</th>
+            <th>{{$data['Phone_Number']}}</th>
+            <th>{{$data['password']}}</th>
+            </tr>
+            @endforeach
+
+
+        </table>
     
-</body>
-</html>
+@endsection
+    
