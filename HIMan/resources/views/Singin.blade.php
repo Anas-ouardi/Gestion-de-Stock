@@ -111,11 +111,11 @@
 	<div class="fakebox"></div>
 		<div class="container">
 			
-			<form action="{{route("log_in")}}" method="post" id="form1">
+			<form action="{{ route("log_in") }}" method="GET" id="form1" >
 				@csrf
 				<h1 id="h1">Sign In</h1>
 				<i class="bi bi-envelope-fill"></i><input type="text" name="log" id="log" placeholder="E-mail"><br>
-				<i class="bi bi-shield-lock"></i></i><input type="text" name="pass" id="pss" placeholder="Password"><br>
+				<i class="bi bi-shield-lock"></i></i><input type="password" name="pass" id="pss" placeholder="Password"><br>
 				<a href=" {{route('password_forget')}} " id="link"> Forget your password ? </a><br>
 				<input type="submit" value="Sign in" id="btn1"><br>
 				<span id="link1"> Don't Have An Account Yet ? <a href=" {{ route('singup') }} ">Sing Up </a></span>

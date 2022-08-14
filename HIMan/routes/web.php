@@ -41,4 +41,7 @@ Route::get('/password_forget',function(){
 
 Route::get("/main_log",[SingupController::class,'main'])->name('main_log');
 
-Route::get("/log_in",[SingupController::class,'main'])->name('log_in');
+Route::get("/log_in",[SingupController::class,'log_in'])->name('log_in');
+
+
+Route::get("user_interface/{id}",[SingupController::class,'user_interface'])->name('user_interface');

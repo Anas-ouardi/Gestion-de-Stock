@@ -7,6 +7,8 @@ use App\Models\singup;
 
 use function Ramsey\Uuid\v1;
 
+session_start();
+$_SESSION['CONECT']=false;
 class SingupController extends Controller
 {
     public function index(){
@@ -54,8 +56,28 @@ class SingupController extends Controller
     }
 
     public function log_in(Request $request){
+
+        $data = singup::all();
+
+        $request->input('log');
+        $request->input('pass');
+        foreach($data as $x){
+            if($request->input('log')===$x['Email'] and $request->input('pass')===$x['password']){
+                        $_SESSION['CONECT']='dd';
+                        // dd($_SESSION['CONECT']);
+                        return redirect()->route('user_interface',['id'=>$x['id']]);// dir view noxan 
+                    }
+
+        }
+        
+    }
+
+    public function user_interface($id){
+
+        
         
 
+        return view("user_interface",['user_id'=>$id,'title'=>'USER']);
 
     }
 
