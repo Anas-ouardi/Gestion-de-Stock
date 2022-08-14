@@ -119,6 +119,6 @@ class SingupController extends Controller
         $signup = singup::find($id);
         $signup->delete();
 
-        return redirect()->route('index');
+        return redirect()->route('main_log');
     }
 }
