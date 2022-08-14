@@ -20,28 +20,35 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Singin',function(){
-    return view("Singin",['title'=>'Singin']);
+Route::get('/Singin', function () {
+    return view("Singin", ['title' => 'Singin']);
 })->name("singin");
 
-Route::get('/Singup',function(){
-    return view("Singup",["title"=>'Singup']);
+Route::get('/Singup', function () {
+    return view("Singup", ["title" => 'Singup']);
 })->name("singup");
 
 
-Route::get('/stor',[SingupController::class,'stor'])->name('stor');
+Route::get('/stor', [SingupController::class, 'stor'])->name('stor');
 
 
-Route::get('/index',[SingupController::class,'index'])->name('index');
+Route::get('/index', [SingupController::class, 'index'])->name('index');
 
 
-Route::get('/password_forget',function(){
-    return view("Password_forget",["title"=>'Password Forgot']);
+Route::get('/password_forget', function () {
+    return view("Password_forget", ["title" => 'Password Forgot']);
 })->name('password_forget');
 
-Route::get("/main_log",[SingupController::class,'main'])->name('main_log');
+Route::get("/main_log", [SingupController::class, 'main'])->name('main_log');
 
-Route::get("/log_in",[SingupController::class,'log_in'])->name('log_in');
+Route::get("/log_in", [SingupController::class, 'log_in'])->name('log_in');
 
+Route::get("user_interface/{id}", [SingupController::class, 'user_interface'])->name('user_interface');
 
-Route::get("user_interface/{id}",[SingupController::class,'user_interface'])->name('user_interface');
+/* add some funtions and Routes */
+
+Route::get('edit/{id}', [SingupController::class, 'edit'])->name('EditUser');
+
+Route::post('update/{id}', [SingupController::class, 'update'])->name('UpdateUser');
+
+Route::delete('delete/{id}', [SingupController::class, 'delete'])->name('DeleteUser');

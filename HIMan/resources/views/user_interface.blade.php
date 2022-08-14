@@ -28,18 +28,18 @@
                     <td> {{ $item['Phone_Number'] }} </td>
                     <td> {{ $item['password'] }} </td>
                     <td>
-                        {{-- <div class="d-flex">
+                        <div class="d-flex">
                             <div class="me-3">
-                                <form action="{{ route('DeleteSelector', ['id' => $item['id']]) }}" method="post">
+                                <form action="{{ route('DeleteUser', ['id' => $item['id']]) }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
                             </div>
                             <div>
-                                <a href=" {{ route('EditSelector', ['id' => $item['id']]) }} " class="btn btn-info">Update</a>
+                                <a href=" {{ route('EditUser', ['id' => $item['id']]) }} " class="btn btn-info">Update</a>
                             </div>
-                        </div> --}}
+                        </div>
                     </td>
                 </tbody>
             @endforeach

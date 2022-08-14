@@ -79,7 +79,39 @@ class SingupController extends Controller
 
         $data = singup::all();
 
-        return view("user_interface", ['user_id' => $id, 'data' => $data, 'title' => 'USER']);
+        return view("user_interface", ['user_id' => $id, 'data' => $data, 'title' => 'Home']);
+    }
+
+    public function edit($id)
+    {
+        $user = singup::find($id);
+
+        return view('edituser', ['data' => $user]);
+    }
+
+    public function update($id, Request $request)
+    {
+
+        $res  = $request->validate(
+            [
+                'Entroprise_Name' => 'required',
+                'User_Name' => 'required',
+                'Email' => 'required',
+                'Phone_Number' => 'required',
+                'password' => 'required'
+            ]
+        );
+
+
+        $Singup_table = singup::find($id);
+
+        $Singup_table->Entroprise_Name = $request->input('Entroprise_Name');
+        $Singup_table->User_Name = $request->input('User_Name');
+        $Singup_table->Email = $request->input('Email');
+        $Singup_table->Phone_Number = $request->input('Phone_Number');
+        $Singup_table->password = $request->input('password');
+
+        return redirect()->route('user_interface');
     }
 
     public function delete($id)
