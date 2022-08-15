@@ -112,7 +112,7 @@
                             </div>
                         </div>
                         <div class="card m-3 col" style="width: 18rem;">
-                            <img src="{{ url('img/43.jpg') }}" class="card-img-top" alt="...">
+                            <img src="{{ url('img/21.jpg') }}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Front-end Developer</h5>
                                 <p class="card-text">
@@ -124,7 +124,7 @@
                             </div>
                         </div>
                         <div class="card m-3 col" style="width: 18rem;">
-                            <img src="{{ url('img/43.jpg') }}" class="card-img-top" alt="...">
+                            <img src="{{ url('img/9.jpg') }}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">3D Games Developer</h5>
                                 <p class="card-text">
