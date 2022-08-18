@@ -111,7 +111,11 @@ class SingupController extends Controller
         $Singup_table->Phone_Number = $request->input('Phone_Number');
         $Singup_table->password = $request->input('password');
 
-        return redirect()->route('user_interface');
+        $Singup_table->save();
+
+        $data = singup::all();
+
+        return view('user_interface', ['data' => $data, 'title' => "Home"]);
     }
 
     public function delete($id)

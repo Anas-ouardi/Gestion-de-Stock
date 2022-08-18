@@ -6,7 +6,7 @@
             @csrf
             <div class="mb-3">
                 <label class="form-label">Entroprise Name</label>
-                <input type="text" class="form-control" name="name"
+                <input type="text" class="form-control" name="Entroprise_Name"
                     value="{{ old('Entroprise_Name', $data['Entroprise_Name'] ?? null) }}">
 
                 @error('Entroprise_Name')
@@ -18,7 +18,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">User Name</label>
-                <input type="text" class="form-control" name="email"
+                <input type="text" class="form-control" name="User_Name"
                     value="{{ old('User_Name', $data['User_Name'] ?? null) }}">
 
                 @error('User_Name')
@@ -30,7 +30,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Email</label>
-                <input type="text" class="form-control" name="password"
+                <input type="text" class="form-control" name="Email"
                     value="{{ old('Email', $data['Email'] ?? null) }}">
 
                 @error('Email')
@@ -42,7 +42,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Phone Number</label>
-                <input type="text" class="form-control" name="email"
+                <input type="text" class="form-control" name="Phone_Number"
                     value="{{ old('Phone_Number', $data['Phone_Number'] ?? null) }}">
 
                 @error('Phone_Number')
