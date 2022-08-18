@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('Singup_table', function (Blueprint $table) {
             $table->id();
-            // $table->string('src');
+            $table->string('src');
             $table->string('Entroprise_Name');
             $table->string('User_Name');
             $table->string('Email')->unique();
             $table->string('Phone_Number')->unique();
-            // $table->timestamp('email_verified_at')->nullable();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            // $table->rememberToken();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

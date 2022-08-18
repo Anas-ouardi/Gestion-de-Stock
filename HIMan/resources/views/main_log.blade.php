@@ -4,6 +4,7 @@
         <table border="1px">
             <tr>
                 <th>Id</th>
+                <th>SRC</th>
                 <th>Entroprise_Name</th>
                 <th>User_Name</th>
                 <th>Email</th>
@@ -14,6 +15,7 @@
             @foreach ($datas as $data)
             <tr>
             <th>{{$data['id']}}</th>
+            <th>{{$data['src']}}</th>
             <th>{{$data['Entroprise_Name']}}</th>
             <th>{{$data['User_Name']}}</th>
             <th>{{$data['Email']}}</th>
@@ -24,6 +26,10 @@
 
 
         </table>
+
+        @foreach ($datas as $y)
+            <img src="{{$y['src']}}" style="width: 200px" alt="nom">
+        @endforeach
     
 @endsection
     

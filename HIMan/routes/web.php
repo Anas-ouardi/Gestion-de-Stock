@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/Singin',function(){
-    return view("Singin",['title'=>'Singin']);
+    return view("Singin",['title'=>'Singin','massage'=>'']);
 })->name("singin");
 
 Route::get('/Singup',function(){
