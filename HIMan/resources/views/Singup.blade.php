@@ -162,7 +162,7 @@
 	<div class="fakebox"></div>
 		<div class="container">
 			
-			<form action=" {{ route('stor') }} " method="GET" id="form1" >
+			<form action=" {{ route('stor') }} " method="POST" enctype="multipart/form-data" id="form1" >
 				@csrf
 				<h1 id="h1">Sign Up</h1>
 

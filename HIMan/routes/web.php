@@ -29,7 +29,7 @@ Route::get('/Singup',function(){
 })->name("singup");
 
 
-Route::get('/stor',[SingupController::class,'stor'])->name('stor');
+Route::post('/stor',[SingupController::class,'stor'])->name('stor');
 
 
 Route::get('/index',[SingupController::class,'index'])->name('index');

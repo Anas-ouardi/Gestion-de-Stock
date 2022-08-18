@@ -39,24 +39,19 @@ class SingupController extends Controller
                 're_password'=>'required|min:8'
             ] );
 
+            $request->file('Avatar')->store('users_avatar');
+
 
         $Singup_table = new singup();
 
         $Singup_table->Entroprise_Name = $request->input('Entroprise_Name');
-        $Singup_table->src ='../users_avatar/dd'.$request->input('Avatar');
+        $Singup_table->src ='storage/app/users_avatar/'.$request->input('Avatar');
         $Singup_table->User_Name = $request->input('User_Name');
         $Singup_table->Email = $request->input('Email');
         $Singup_table->Phone_Number = $request->input('Phone_Number');
         $Singup_table->password = $request->input('password');
         
-        $avatar=$request->input('Avatar');
         
-
-            
-            $_FILES["$avatar"];
-            $nom=$_FILES[$avatar]["tmp_name"];
-            $nomdestination="../users_avatar/dd".$_FILES[$avatar]["Avatar"]."jpg";
-            move_uploaded_file($nom,$nomdestination);
 
         
         $Singup_table->save();
