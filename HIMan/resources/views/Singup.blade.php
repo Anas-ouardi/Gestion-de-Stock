@@ -214,7 +214,7 @@
 
 				<div class="div1">
 					<i class="bi bi-shield-lock"></i>
-					<input type="password" name="password" class="input"  placeholder="Set Password">
+					<input type="password" id="pass" name="password" class="input"  placeholder="Set Password">
 
 					@error('password')
 					<small  style="color: red" class="message" >
@@ -225,7 +225,7 @@
 
 				<div class="div1">
 					<i class="bi bi-shield-check"></i>
-					<input type="password" name="re_password" class="input"  placeholder="Re-Enter Password">
+					<input type="password" id="re_pass" name="re_password" class="input"  placeholder="Re-Enter Password">
 					@error('re_password')
 						<small  style="color: red" class="message" >
 							{{ $message }}
@@ -245,6 +245,17 @@
 
 			<img src="../img/171.jpg"  id="img2">
 		</div>
+
+		{{-- <script>
+			let pass=document.getElementById('pass').value;
+			let re_pass=document.getElementById('re_pass').value;
+			console.log(pass);
+			console.log(re_pass);
+			if(pass !== re_pass){
+				alert('the password is not the same ');
+			}
+			
+		</script> --}}
 
 	@endsection
 	

@@ -28,7 +28,11 @@
         </table>
 
         @foreach ($datas as $y)
-            <img src="{{$y['src']}}" style="width: 200px" alt="nom">
+            <img src=" {{ asset($y['src']) }}" style="width: 200px" alt="nom">
+            <ul>
+                <li> {{$y['src']}} </li>
+            </ul>
+           
         @endforeach
     
 @endsection

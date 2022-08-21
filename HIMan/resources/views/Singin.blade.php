@@ -100,6 +100,21 @@
 			font-family: 'Courier New', Courier, monospace;
 			font-size: 15px;
 		}
+		.message{
+			position: absolute;
+			top: 33px;
+			left: 0px;
+			/* background:wheat; */
+			border-radius: 25px;
+			opacity: 70%;
+			font-size: 14px;
+			font-family: 'Courier New', Courier, monospace;
+			font-weight: bold;
+		}
+		.div1{
+			position: relative;
+			display: inline-block;
+		}
 		
 
 	</style>
@@ -111,12 +126,24 @@
 	<div class="fakebox"></div>
 		<div class="container">
 			
-			<form action="{{ route("log_in") }}" method="GET" id="form1" >
+			<form action="{{ route("log_in") }}" method="POST" id="form1" >
 				@csrf
 				<h1 id="h1">Sign In</h1>
 				<p> {{$massage}} </p>
-				<i class="bi bi-envelope-fill"></i><input type="email" name="log" id="log" placeholder="E-mail" required ><br>
-				<i class="bi bi-shield-lock"></i></i><input type="password" name="pass" id="pss" placeholder="Password" required ><br>
+				<div class="div1"><i class="bi bi-envelope-fill"></i><input type="email" name="log" id="log" placeholder="E-mail" required >
+				@error('log')
+						<small  style="color: red" class="message" >
+							{{ $message }}
+						</small><br>
+				@enderror
+				</div><br>
+				<div class="div1"><i class="bi bi-shield-lock"></i></i><input type="password" name="pass" id="pss" placeholder="Password" required >
+				@error('pass')
+						<small  style="color: red" class="message" >
+							{{ $message }}
+						</small><br>
+				@enderror
+				</div><br>
 				<a href=" {{route('password_forget')}} " id="link"> Forget your password ? </a><br>
 				<input type="submit" value="Sign in" id="btn1"><br>
 				<span id="link1"> Don't Have An Account Yet ? <a href=" {{ route('singup') }} ">Sing Up </a></span>
