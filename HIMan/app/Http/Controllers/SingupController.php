@@ -58,18 +58,18 @@ class SingupController extends Controller
                 'log'=>'required',
                 'pass'=>'required|min:8|alphaNum'
             ] );
-
+        
         foreach($data as $x){
 
             if($request->input('log')===$x['Email'] and $request->input('pass')===$x['password']){
                 return view("user_interface",['user_id'=>$x['id'],'title'=>'USER']);
                         // return redirect()->route('user_interface',['id'=>$x['id']]);
             }
-            else{
-                 return redirect()->route('singin');
-                // return view('Singin',['title'=>'Singin','massage'=>'the password or the email is wrong']);
-            }
+       
         }
+       
+        return redirect()->route('singin');
+       
         
     }
 
