@@ -63,7 +63,7 @@ class SingupController extends Controller
 
             if($request->input('log')===$x['Email'] and $request->input('pass')===$x['password']){
                 return view("user_interface",['user_id'=>$x['id'],'title'=>'USER']);
-                        // return redirect()->route('user_interface',['id'=>$x['id']]);// dir view noxan 
+                        // return redirect()->route('user_interface',['id'=>$x['id']]);
             }
             else{
                  return redirect()->route('singin');
@@ -71,6 +71,21 @@ class SingupController extends Controller
             }
         }
         
+    }
+
+    public function singin(){
+
+        return view("Singin",['title'=>'Singin','massage'=>'']);
+    }
+
+    public function singup(){
+
+        return view("Singup",["title"=>'Singup']);
+    }
+
+    public function password_forget(){
+
+        return view("Password_forget",["title"=>'Password Forgot']);
     }
 
     // public function user_interface($id){
