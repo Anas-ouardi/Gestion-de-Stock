@@ -24,7 +24,7 @@ Route::get('/Singin',[SingupController::class,'singin'])->name("singin");
 
 Route::get('/Singup',[SingupController::class,'singup'])->name("singup");
 
-Route::get('/stor',[SingupController::class,'stor'])->name('stor');
+Route::post('/stor',[SingupController::class,'stor'])->name('stor');
 
 Route::get('/index',[SingupController::class,'index'])->name('index');
 
