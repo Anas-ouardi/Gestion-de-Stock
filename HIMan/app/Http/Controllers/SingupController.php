@@ -85,7 +85,22 @@ class SingupController extends Controller
 
     public function password_forget(){
 
-        return view("Password_forget",["title"=>'Password Forgot']);
+        return view("Password_forget",["title"=>'Password Forgot','normal'=>'1']);
+    }
+
+    public function check_email(Request $request){
+        
+       $email =  $request->input('Email');
+       $data= singup::all();
+       foreach($data as $f){
+            if($email==$f["Email"]){
+                    return view("Password_forget",["title"=>'Password Forgot','normal'=>'2']);
+                }
+
+       }
+       return view("Password_forget",["title"=>'Password Forgot','normal'=>'3']);
+       
+        // return dd($email);
     }
 
     // public function user_interface($id){

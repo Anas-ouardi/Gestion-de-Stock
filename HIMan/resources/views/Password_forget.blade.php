@@ -102,12 +102,43 @@
 			font-family: 'Courier New', Courier, monospace;
 			font-size: 15px;
 		}
+		#link2{
+			font-family: 'Courier New', Courier, monospace;
+			font-size: 15px;
+		}
         #par{
             margin-top:10px;
             font-family: 'Courier New', Courier, monospace;
 			font-size: 16px;
             font-weight: bold;
         }
+		#divsu{
+			background-color: greenyellow;
+			color:green;
+			padding: 10px;
+			border-radius: 10px;
+		}
+		#divsu ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			font-family: 'Courier New', Courier, monospace;
+			font-weight: bold;
+		}
+		#divfa{
+			background-color: pink;
+			color:red;
+			padding: 10px;
+			border-radius: 10px;
+			margin-bottom: 20px;
+		}
+		#divfa ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			font-family: 'Courier New', Courier, monospace;
+			font-weight: bold;
+		}
 
 	</style>
 	@endsection
@@ -116,21 +147,73 @@
 
 	@section('Form')
 	<div class="fakebox"></div>
+
+		@if ($normal==1)
+
+			<div class="container">
+			
+				<form action=" {{ route('check_email') }} " method="Post" id="form1">
+					@csrf
+					<h1 id="h1">Forgot Password?</h1>
+					<p id="par">Enter your registered E-mail to reset the password</p><br>
+					<i class="bi bi-envelope-fill"></i>
+					<input type="email" name="Email" id="log" placeholder="Enter Your E-mail" required><br>
+						<br><br>
+					<input type="submit" value="Send" id="btn1"><br>
+					<span id="link1"> Go back  ? <a href=" {{ route('singin') }} ">Sing In </a></span>
+
+				</form>
+
+				<img src="/img/9.jpg"  id="img2"/>
+			</div>
+
+		@endif
+		@if ($normal==2)
 		<div class="container">
 			
-			<form action="" method="post" id="form1">
+			<form action=" {{ route('check_email') }} " method="Post" id="form1">
 				@csrf
-				<h1 id="h1">Forgot Password?</h1>
-                <p id="par">Enter your registered E-mail to reset the password</p><br>
+				<h1 id="h1">Rest The Password!</h1>
+				<div id="divsu">
+					<ul>
+						<li>We Send A code To Your Gmail</li>
+					</ul>
+					
+				</div>
+				<br>
 				<i class="bi bi-envelope-fill"></i>
-                <input type="email" name="log" id="log" placeholder="Enter Your E-mail"><br>
-                    <br><br>
-				<input type="submit" value="Send" id="btn1"><br>
+				<input type="email" name="Email" id="log" placeholder="Enter Your Code"><br>
+					<br><br>
+				<input type="submit" value="Verfie" id="btn1"><br>
 				<span id="link1"> Go back  ? <a href=" {{ route('singin') }} ">Sing In </a></span>
+
 			</form>
 
 			<img src="/img/9.jpg"  id="img2"/>
 		</div>
+		@endif
+
+		@if ($normal==3)
+		<div class="container">
+			
+			<form action=" {{ route('check_email') }} " method="Post" id="form1">
+				@csrf
+				<h1 id="h1">Forgot Password?</h1>
+				
+				<div id="divfa">
+					<ul>
+						<li>The E-mail not found</li>
+					</ul>
+				</div>
+				<span id="link2"> Retry whidt Defrent E-mail<a href=" {{ route('password_forget') }} ">Click Hir !</a><br></span>
+				<span id="link1"> Go back  ? <a href=" {{ route('singin') }} ">Sing In </a></span>
+
+			</form>
+
+			<img src="/img/9.jpg"  id="img2"/>
+		</div>
+		@endif
+		
 		
 
 	@endsection
