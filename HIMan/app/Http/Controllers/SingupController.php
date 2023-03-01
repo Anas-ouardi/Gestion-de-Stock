@@ -13,6 +13,9 @@ class SingupController extends Controller
     public function index(){
 
         return view("welcome");
+
+
+
     }
 
     public function main(){
@@ -32,6 +35,8 @@ class SingupController extends Controller
                 'password' => 'required|min:8|alphaNum',
                 're_password'=>'required|min:8|alphaNum'
             ] );
+
+            
 
         $request->file('Avatar')->storeAs('public/users_avatar',$request->file('Avatar')->getClientOriginalName());
 
