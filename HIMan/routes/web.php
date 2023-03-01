@@ -37,6 +37,7 @@ Route::post("/log_in",[SingupController::class,'log_in'])->name('log_in');
 Route::post("/check_email",[SingupController::class,'check_email'])->name('check_email');
 
 
+
 Route::get('/hi', function () {
     return view('welcome');
 });
